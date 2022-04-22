@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2b76046e84342e5a877b9a27eab6df, type: 3}
+  m_Name: Recipe1_10
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 5433628523791849797, guid: 4a81adcc7081f32409b3a7ce272195c3, type: 3}
+    - {fileID: 6022889149268079516, guid: 606678f4a44b41842a4b6752d2617448, type: 3}
+    - {fileID: 2821693615181785964, guid: baf5caa523a861c479a42b5c35e8d95e, type: 3}
+    - {fileID: 3986880017514192741, guid: a239f737b7bd6cd4a89d95b3db1ee09d, type: 3}
+    - {fileID: 7499771373968942489, guid: 00f30f2dd22f49d45905d134753756a8, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: candidates
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ICandidate, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  score: 0
