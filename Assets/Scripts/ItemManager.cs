@@ -149,6 +149,9 @@ public class ItemManager : MonoBehaviour
                 }
             }
             newObject.SetActive(true);
+
+            //record when instantiate new item
+            Tinylytics.AnalyticsManager.LogCustomMetric("itemLoadInScene", newObject.GetComponent<Item>().itemName.ToString());
         }
         else
         {
