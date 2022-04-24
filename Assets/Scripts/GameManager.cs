@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
     {
         if (count > maxPackedItemCount)
         {
-            maxPackedItemCount = count;
+            maxPackedItemCount = count;           
         }
     }
 }

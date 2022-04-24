@@ -17,6 +17,10 @@ public class ItemRot : MonoBehaviour
 
     private bool trashing = false;
 
+    //Data Analysis
+    public bool itemDragInFridge = false;
+    public bool itemTrashing = false;
+
     ItemColor itemColor;
     public GameObject countDown = null;
 
@@ -43,6 +47,13 @@ public class ItemRot : MonoBehaviour
         }
 		if (trashing)
         {
+            //record when player drag the item into fridge 
+            if (!itemTrashing)
+            {
+                Tinylytics.AnalyticsManager.LogCustomMetric("itemTrashing", gameObject.GetComponent<Item>().itemName.ToString());
+                itemTrashing = true;
+            }
+           
             this.transform.localScale += new Vector3(-0.01f, -0.01f, -0.01f);
             this.transform.Rotate(0, 0, 3);
         }
@@ -53,8 +64,9 @@ public class ItemRot : MonoBehaviour
         }
         if (IsInsideFridge())
         {
-            rotting = false;
-        } else
+            rotting = false;        
+        }
+        else
         {
             rotting = true;
         }
@@ -94,4 +106,15 @@ public class ItemRot : MonoBehaviour
             && this.transform.position.y > bottom
             && this.transform.position.y < top;
     }
+
+    //Data Analysis
+    public void ItemDragInFridge()
+    {
+        if (!itemDragInFridge)
+        {
+            Tinylytics.AnalyticsManager.LogCustomMetric("itemDragInFridge", gameObject.GetComponent<Item>().itemName.ToString());
+            itemDragInFridge = true;
+        }      
+    }
+
 }

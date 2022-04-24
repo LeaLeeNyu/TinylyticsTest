@@ -75,6 +75,8 @@ public class DragAndSnap : MonoBehaviour
             }
         }
         this.placeholder.SetActive(true);
+       
+
         clicked = true;
         isDragging = true;
         foreach (var collider in colliders)
@@ -156,6 +158,7 @@ public class DragAndSnap : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         overlappingColliders.Add(collider);
+
         if (IsCollidingWithSmallBound(collider))
         {
             overlappingSmallColliders.Add(collider);

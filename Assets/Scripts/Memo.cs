@@ -21,7 +21,10 @@ public class Memo : MonoBehaviour
 	private Vector2 startPos;
 	private Image image;
 
-	private void Awake() {
+    //Data Analysis
+    public bool itemtoRecipe = false;
+
+    private void Awake() {
     image = GetComponent<Image>();
 	}
 
@@ -84,7 +87,11 @@ public class Memo : MonoBehaviour
 			if (item.Matches(ingredients[i]))
 			{
 				Debug.Log("Checked goal: " + ingredients[i].GetName());
-				ingredientStates[i] = true;
+
+                //record when player drag item to recipe and complete recipe
+                Tinylytics.AnalyticsManager.LogCustomMetric("itemtoRecipe", item.GetComponent<Item>().itemName.ToString());
+
+                ingredientStates[i] = true;
 				checkBoxes[i].SetChecked();
 				CheckMenuComplete();
 				return true;
@@ -160,9 +167,10 @@ public class Memo : MonoBehaviour
 	{
 		var dragAndSnap = collider.GetComponent<DragAndSnap>();
 		if (dragAndSnap != null && dragAndSnap.isDragging) {
-			if (IsPotentialItem(collider.GetComponent<Item>())) {
-				image.color = GlobalSettings.instance().validPlacementColor;
-			} else {
+            if (IsPotentialItem(collider.GetComponent<Item>())) {
+				image.color = GlobalSettings.instance().validPlacementColor;             
+
+            } else {
 	   		image.color = GlobalSettings.instance().invalidPlacementColor; 
 			}
 		}

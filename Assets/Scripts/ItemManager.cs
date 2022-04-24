@@ -109,6 +109,9 @@ public class ItemManager : MonoBehaviour
         foreach (var itemRot in itemRots) {
             if (itemRot.IsInsideFridge()) {
                 count++;
+
+                //record when player drag the item into fridge
+                itemRot.ItemDragInFridge();
             }
         }
         GameManager.instance().UpdateMaxPackedItem(count);
